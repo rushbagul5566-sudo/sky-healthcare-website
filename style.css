@@ -146,3 +146,16 @@ header h1 {
     color: #0077cc;
     font-size: 32px;
 }
+.about {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.about h2 {
+    color: #0077cc;
+}
+
+.about p {
+    font-size: 18px;
+    line-height: 1.6;
+}
