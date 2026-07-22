@@ -331,3 +331,17 @@ p {
 .box:hover {
     transform: translateY(-5px);
                              }
+.hero {
+    background: #e8f3ff;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.hero h2 {
+    color: #007bff;
+    font-size: 36px;
+}
+
+.hero p {
+    font-size: 18px;
+}
