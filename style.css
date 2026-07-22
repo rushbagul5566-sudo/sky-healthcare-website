@@ -73,3 +73,24 @@ footer{
     text-align:center;
     padding:20px;
 }
+.cards{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+padding:40px 20px;
+}
+
+.card{
+width:300px;
+background:white;
+padding:25px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,0.15);
+text-align:center;
+}
+
+.card h3{
+color:#0A66C2;
+margin-bottom:10px;
+}
