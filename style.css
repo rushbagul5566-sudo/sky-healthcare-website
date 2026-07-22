@@ -120,3 +120,16 @@ margin-bottom:10px;
     border: none;
     border-radius: 5px;
 }
+.contact {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.whatsapp {
+    display: inline-block;
+    background: green;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+}
