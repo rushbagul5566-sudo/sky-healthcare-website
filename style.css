@@ -29,3 +29,12 @@ footer {
     color: white;
     padding: 15px;
 }}
+.whatsapp {
+    display: inline-block;
+    background: green;
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 8px;
+    margin: 20px;
+}
