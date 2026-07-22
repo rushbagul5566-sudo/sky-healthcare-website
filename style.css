@@ -345,3 +345,23 @@ p {
 .hero p {
     font-size: 18px;
 }
+.banner {
+    background: #e8f3ff;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.banner h2 {
+    color: #007bff;
+    font-size: 32px;
+}
+
+.btn {
+    display: inline-block;
+    background: #007bff;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-top: 20px;
+   }
