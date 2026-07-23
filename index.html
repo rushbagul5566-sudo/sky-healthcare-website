@@ -1,1 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sky Healthcare - Premium Medical and Home Visit Services in Pune, Maharashtra.">
+    <title>Sky Healthcare | Premium Care in Pune</title>
+    
+    <!-- Google Fonts: Inter for an Apple-like clean typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons for premium, clean iconography -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+    <!-- Navigation -->
+    <header class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <i class="ph ph-heartbeat"></i>
+                Sky Healthcare
+            </a>
+            
+            <button class="mobile-toggle" aria-label="Toggle menu" id="mobile-toggle">
+                <i class="ph ph-list"></i>
+            </button>
+
+            <nav class="nav-links" id="nav-links">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#careers" class="nav-link">Careers</a>
+                <a href="#contact" class="btn btn-primary nav-btn">Contact Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-bg-gradient"></div>
+            <div class="container hero-content">
+                <div class="hero-text fade-in-up">
+                    <h1>Elevating Healthcare <span>Standards</span></h1>
+                    <p>Experience world-class medical services and dedicated home visits right here in Pune. Compassionate, professional care tailored to your needs.</p>
+                    <div class="hero-actions">
+                        <a href="#services" class="btn btn-primary">Explore Services</a>
+                        <a href="#contact" class="btn btn-secondary">Book Appointment</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section (Glassmorphism Cards) -->
+        <section id="services" class="services">
+            <div class="container">
+                <div class="section-header fade-in-up">
+                    <h2>Our Premium Services</h2>
+                    <p>Comprehensive care delivered with excellence and empathy.</p>
+                </div>
+                
+                <div class="services-grid">
+                    <!-- Service 1 -->
+                    <div class="service-card glass fade-in-up">
+                        <div class="icon-wrapper">
+                            <i class="ph ph-stethoscope"></i>
+                        </div>
+                        <h3>Medical Services</h3>
+                        <p>Advanced diagnostic and therapeutic care provided by top-tier medical professionals.</p>
+                    </div>
+
+                    <!-- Service 2 -->
+                    <div class="service-card glass fade-in-up" style="transition-delay: 0.1s;">
+                        <div class="icon-wrapper">
+                            <i class="ph ph-house-line"></i>
+                        </div>
+                        <h3>Home Visit Care</h3>
+                        <p>Premium healthcare brought directly to your doorstep for ultimate comfort and convenience.</p>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div class="service-card glass fade-in-up" style="transition-delay: 0.2s;">
+                        <div class="icon-wrapper">
+                            <i class="ph ph-first-aid"></i>
+                        </div>
+                        <h3>24/7 Support</h3>
+                        <p>Round-the-clock medical assistance ensuring you and your loved ones are always protected.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Careers Section -->
+        <section id="careers" class="careers bg-light">
+            <div class="container">
+                <div class="careers-content fade-in-up">
+                    <h2>Join the Sky Healthcare Family</h2>
+                    <p>We are expanding our premium team in Pune. We are currently seeking dedicated, highly-skilled professionals to elevate patient care.</p>
+                    
+                    <div class="job-listings">
+                        <div class="job-card">
+                            <div class="job-info">
+                                <h4>Registered Nurses</h4>
+                                <span>Full-time / Shifts</span>
+                            </div>
+                            <a href="#contact" class="btn btn-outline">Apply Now</a>
+                        </div>
+                        <div class="job-card">
+                            <div class="job-info">
+                                <h4>Patient Care Attendants</h4>
+                                <span>Full-time / Home Visits</span>
+                            </div>
+                            <a href="#contact" class="btn btn-outline">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer / Contact Section -->
+    <footer id="contact" class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="#" class="logo text-white">
+                    <i class="ph ph-heartbeat"></i>
+                    Sky Healthcare
+                </a>
+                <p>Setting the gold standard for medical and home care services in Maharashtra.</p>
+            </div>
+            
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <ul>
+                    <li><i class="ph ph-map-pin"></i> Pune, Maharashtra, India</li>
+                    <li><i class="ph ph-phone"></i> +91 (XXX) XXX-XXXX</li>
+                    <li><i class="ph ph-envelope"></i> care@skyhealthcare.in</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 Sky Healthcare. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+  </html>
