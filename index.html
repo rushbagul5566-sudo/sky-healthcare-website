@@ -1,418 +1,1062 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sky Healthcare | Trusted Home Healthcare & Medical Services in Pune</title>
-  <meta name="description" content="Sky Healthcare provides 24/7 certified home nursing, patient care attendants, doctor visits, elderly care, and home ICU setups across Pune, India.">
-  <meta name="keywords" content="Sky Healthcare Pune, home nursing care Pune, patient care attendant Pune, doctor home visit Pune, ICU at home Pune, elderly care Pune, home physiotherapy">
-  <meta name="robots" content="index, follow">
+/* ==========================================================================
+   Sky Healthcare - Master Stylesheet
+   Modern, Mobile-First, Accessible Medical Design
+   ========================================================================== */
 
-  <!-- Open Graph / Social Media -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Sky Healthcare | Professional Home Healthcare in Pune">
-  <meta property="og:description" content="Certified nurses, patient attendants, and doctor visits delivered to your doorstep in Pune. Dedicated 24/7 medical support.">
-  <meta property="og:url" content="https://www.skyhealthcare.in">
+/* --------------------------------------------------------------------------
+   1. CSS Variables & Theme Setup
+   -------------------------------------------------------------------------- */
+:root {
+  --primary: #0b3c5d;          /* Deep Medical Blue */
+  --primary-hover: #072a42;
+  --secondary: #00a896;        /* Vibrant Healthcare Teal */
+  --secondary-hover: #008072;
+  --accent: #ff6b6b;           /* Warm Coral Accent */
   
-  <!-- Fonts & Icons -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  
-  <!-- External Stylesheet -->
-  <link rel="stylesheet" href="style.css">
+  --bg-light: #f4f8fa;         /* Soft Ice Blue */
+  --bg-white: #ffffff;
+  --text-dark: #1d2a44;        /* Dark Charcoal Body Text */
+  --text-muted: #5a6b82;      /* Muted Secondary Text */
+  --border-color: #e2e8f0;
 
-  <!-- Schema.org Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "MedicalBusiness",
-    "name": "Sky Healthcare",
-    "description": "Premium home healthcare services, certified nursing care, patient attendants, and home medical support in Pune, India.",
-    "url": "https://www.skyhealthcare.in",
-    "telephone": "+91 98765 43210",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Pune",
-      "addressRegion": "Maharashtra",
-      "addressCountry": "IN"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 18.5204,
-      "longitude": 73.8567
-    },
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-      "opens": "00:00",
-      "closes": "23:59"
-    },
-    "priceRange": "₹₹"
+  --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  
+  --shadow-sm: 0 2px 8px rgba(11, 60, 93, 0.06);
+  --shadow-md: 0 8px 24px rgba(11, 60, 93, 0.1);
+  --shadow-lg: 0 16px 36px rgba(11, 60, 93, 0.14);
+  
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+  
+  --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --------------------------------------------------------------------------
+   2. Base & Reset
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-white);
+  color: var(--text-dark);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* --------------------------------------------------------------------------
+   3. Layout & Typography Utilities
+   -------------------------------------------------------------------------- */
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.section {
+  padding: 4.5rem 0;
+}
+
+.bg-light {
+  background-color: var(--bg-light);
+}
+
+.grid {
+  display: grid;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .grid-2-cols {
+    grid-template-columns: repeat(2, 1fr);
   }
-  </script>
-</head>
-<body>
+}
 
-  <!-- Navigation Bar -->
-  <header class="navbar-header" id="header">
-    <div class="container navbar-container">
-      <a href="#home" class="brand-logo" aria-label="Sky Healthcare Home">
-        <div class="logo-icon-wrapper">
-          <i class="fa-solid fa-heart-pulse"></i>
-        </div>
-        <span class="logo-text">Sky <span class="logo-highlight">Healthcare</span></span>
-      </a>
+.align-center {
+  align-items: center;
+}
 
-      <nav class="nav-menu" id="nav-menu" aria-label="Main Navigation">
-        <ul class="nav-list">
-          <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
-          <li class="nav-item"><a href="#about" class="nav-link">About Us</a></li>
-          <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
-          <li class="nav-item"><a href="#why-us" class="nav-link">Why Choose Us</a></li>
-          <li class="nav-item"><a href="#testimonials" class="nav-link">Testimonials</a></li>
-          <li class="nav-item"><a href="#faq" class="nav-link">FAQ</a></li>
-          <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
-        </ul>
-      </nav>
+.text-center {
+  text-align: center;
+}
 
-      <div class="header-actions">
-        <a href="tel:+919876543210" class="btn btn-outline btn-phone-header">
-          <i class="fa-solid fa-phone"></i>
-          <span>+91 98765 43210</span>
-        </a>
-        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-          <i class="fa-solid fa-bars icon-open"></i>
-          <i class="fa-solid fa-xmark icon-close"></i>
-        </button>
-      </div>
-    </div>
-  </header>
+.section-header {
+  max-width: 750px;
+  margin: 0 auto 3rem auto;
+}
 
-  <!-- Main Content -->
-  <main>
-    <!-- Hero Section -->
-    <section class="hero-section" id="home">
-      <div class="container hero-container">
-        <div class="hero-content reveal">
-          <div class="badge-pill">
-            <i class="fa-solid fa-shield-halved"></i>
-            <span>Pune's Premier Home Healthcare Provider</span>
-          </div>
-          <h1 class="hero-title">Hospital-Quality Care in the Comfort of Your Home</h1>
-          <p class="hero-subtitle">
-            Sky Healthcare delivers compassionate, 24/7 certified nursing care, patient attendants, doctor visits, and critical ICU setups directly to your doorstep in Pune.
-          </p>
-          <div class="hero-cta-group">
-            <a href="#contact" class="btn btn-primary btn-lg">
-              <i class="fa-solid fa-calendar-check"></i>
-              <span>Book Care Service</span>
-            </a>
-            <a href="tel:+919876543210" class="btn btn-secondary btn-lg">
-              <i class="fa-solid fa-phone-volume"></i>
-              <span>Call Helpline</span>
-            </a>
-          </div>
-          <div class="hero-trust-badges">
-            <div class="trust-item">
-              <i class="fa-solid fa-circle-check"></i>
-              <span>100% Background-Vetted Staff</span>
-            </div>
-            <div class="trust-item">
-              <i class="fa-solid fa-circle-check"></i>
-              <span>24/7 Emergency Response</span>
-            </div>
-          </div>
-        </div>
+.section-tag {
+  display: inline-block;
+  padding: 0.35rem 1rem;
+  background-color: rgba(0, 168, 150, 0.12);
+  color: var(--secondary);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: var(--radius-full);
+  margin-bottom: 0.8rem;
+}
 
-        <div class="hero-card-wrapper reveal">
-          <div class="hero-card">
-            <div class="hero-card-header">
-              <i class="fa-solid fa-user-nurse hero-card-icon"></i>
-              <div>
-                <h3>Need Immediate Patient Support?</h3>
-                <p>Deploy qualified medical staff within 2 to 4 hours in Pune.</p>
-              </div>
-            </div>
-            <ul class="hero-card-list">
-              <li><i class="fa-solid fa-check"></i> Certified ICU Nurses (GnM / B.Sc Nursing)</li>
-              <li><i class="fa-solid fa-check"></i> Trained Male & Female Patient Attendants</li>
-              <li><i class="fa-solid fa-check"></i> Doctor & Physiotherapist Home Visits</li>
-              <li><i class="fa-solid fa-check"></i> Complete Medical Equipment Rental & Setup</li>
-            </ul>
-            <a href="https://wa.me/919876543210?text=Hello%20Sky%20Healthcare,%20I%20need%20urgent%20homecare%20support%20in%20Pune." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp-card">
-              <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp Now
-            </a>
-          </div>
-        </div>
-      </div>
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1.25;
+  margin-bottom: 1rem;
+}
 
-      <!-- Stats Counter Bar -->
-      <div class="stats-bar">
-        <div class="container stats-container">
-          <div class="stat-box">
-            <span class="stat-number" data-target="5000">0</span><span class="stat-plus">+</span>
-            <span class="stat-label">Families Served in Pune</span>
-          </div>
-          <div class="stat-box">
-            <span class="stat-number" data-target="250">0</span><span class="stat-plus">+</span>
-            <span class="stat-label">Certified Caregivers & Nurses</span>
-          </div>
-          <div class="stat-box">
-            <span class="stat-number" data-target="15">0</span><span class="stat-plus">+</span>
-            <span class="stat-label">Medical Specialties</span>
-          </div>
-          <div class="stat-box">
-            <span class="stat-number" data-target="24">0</span><span class="stat-plus">/7</span>
-            <span class="stat-label">Dedicated Support Line</span>
-          </div>
-        </div>
-      </div>
-    </section>
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.8rem;
+  }
+}
 
-    <!-- About Us Section -->
-    <section class="section about-section" id="about">
-      <div class="container">
-        <div class="grid grid-2-cols align-center">
-          <div class="about-visual reveal">
-            <div class="about-experience-card">
-              <span class="exp-years">10+</span>
-              <span class="exp-text">Years of Medical Excellence & Community Trust in Pune</span>
-            </div>
-            <div class="about-highlights-grid">
-              <div class="about-mini-box">
-                <i class="fa-solid fa-stethoscope"></i>
-                <h4>Expert Supervision</h4>
-                <p>Guided by senior doctors and clinical care leads.</p>
-              </div>
-              <div class="about-mini-box">
-                <i class="fa-solid fa-heart-pulse"></i>
-                <h4>Holistic Healing</h4>
-                <p>Physical, emotional, and recovery care tailored for families.</p>
-              </div>
-            </div>
-          </div>
+.section-description {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+}
 
-          <div class="about-content reveal">
-            <div class="section-tag">About Sky Healthcare</div>
-            <h2 class="section-title">Bringing Healing & Dignity Back to Your Home</h2>
-            <p class="section-description">
-              Founded with a mission to bridge the gap between hospital discharge and full home recovery, <strong>Sky Healthcare</strong> provides personalized, compassionate, and professional medical services across Pune.
-            </p>
-            <p class="section-description">
-              We understand that recovery is swiftest when patients stay close to their loved ones. Our rigorous hiring process, continuous skill upgrading, and 24/7 care monitoring ensure your family receives the gold standard in healthcare.
-            </p>
-            <div class="about-feature-list">
-              <div class="feature-item">
-                <i class="fa-solid fa-circle-check"></i>
-                <div>
-                  <strong>Strict Police & Background Verification</strong>
-                  <p>Complete safety and peace of mind for every household.</p>
-                </div>
-              </div>
-              <div class="feature-item">
-                <i class="fa-solid fa-circle-check"></i>
-                <div>
-                  <strong>Tailored Individualized Care Plans</strong>
-                  <p>Custom schedules built around doctor recommendations and patient needs.</p>
-                </div>
-              </div>
-            </div>
-            <a href="#services" class="btn btn-primary">Explore Our Services</a>
-          </div>
-        </div>
-      </div>
-    </section>
+.section-description.center {
+  margin: 0 auto;
+}
 
-    <!-- Services Section -->
-    <section class="section services-section bg-light" id="services">
-      <div class="container">
-        <div class="section-header text-center reveal">
-          <div class="section-tag">Our Services</div>
-          <h2 class="section-title">Comprehensive Home Care Solutions</h2>
-          <p class="section-description center">
-            From short-term post-surgery nursing to 24/7 critical care, Sky Healthcare offers end-to-end medical services tailored for residents of Pune.
-          </p>
-        </div>
+/* --------------------------------------------------------------------------
+   4. Buttons & UI Elements
+   -------------------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.85rem 1.75rem;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: var(--radius-full);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: center;
+}
 
-        <div class="services-grid">
-          <!-- Service 1 -->
-          <article class="service-card reveal">
-            <div class="service-icon-box">
-              <i class="fa-solid fa-user-nurse"></i>
-            </div>
-            <h3 class="service-title">Home Nursing Care</h3>
-            <p class="service-text">
-              Qualified B.Sc & GNM nurses for wound dressings, IV infusions, injections, catheterization, tracheostomy care, and post-operative recovery.
-            </p>
-            <ul class="service-bullets">
-              <li><i class="fa-solid fa-angle-right"></i> 12-Hour / 24-Hour Shifts</li>
-              <li><i class="fa-solid fa-angle-right"></i> Post-Surgical & Wound Care</li>
-            </ul>
-            <a href="#contact" class="service-link">Book Nurse <i class="fa-solid fa-arrow-right"></i></a>
-          </article>
+.btn-primary {
+  background-color: var(--secondary);
+  color: var(--bg-white);
+}
 
-          <!-- Service 2 -->
-          <article class="service-card reveal">
-            <div class="service-icon-box">
-              <i class="fa-solid fa-hands-holding-child"></i>
-            </div>
-            <h3 class="service-title">Patient Care Attendants</h3>
-            <p class="service-text">
-              Trained male and female caretakers for daily hygiene assistance, mobility support, bathing, feeding, medication reminders, and general care.
-            </p>
-            <ul class="service-bullets">
-              <li><i class="fa-solid fa-angle-right"></i> Compassionate & Patient</li>
-              <li><i class="fa-solid fa-angle-right"></i> Semi-Bedridden & Bedridden Support</li>
-            </ul>
-            <a href="#contact" class="service-link">Book Attendant <i class="fa-solid fa-arrow-right"></i></a>
-          </article>
+.btn-primary:hover {
+  background-color: var(--secondary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 168, 150, 0.3);
+}
 
-          <!-- Service 3 -->
-          <article class="service-card reveal">
-            <div class="service-icon-box">
-              <i class="fa-solid fa-house-medical"></i>
-            </div>
-            <h3 class="service-title">Doctor Home Visits</h3>
-            <p class="service-text">
-              Experienced general physicians visiting your home for comprehensive routine checkups, chronic disease management, and prescription reviews.
-            </p>
-            <ul class="service-bullets">
-              <li><i class="fa-solid fa-angle-right"></i> Avoid Hospital Queues</li>
-              <li><i class="fa-solid fa-angle-right"></i> Elderly Routine Checkups</li>
-            </ul>
-            <a href="#contact" class="service-link">Request Doctor <i class="fa-solid fa-arrow-right"></i></a>
-          </article>
+.btn-secondary {
+  background-color: var(--primary);
+  color: var(--bg-white);
+}
 
-          <!-- Service 4 -->
-          <article class="service-card reveal">
-            <div class="service-icon-box">
-              <i class="fa-solid fa-bed-pulse"></i>
-            </div>
-            <h3 class="service-title">ICU Setup at Home</h3>
-            <p class="service-text">
-              Transform your room into an advanced ICU unit with ventilators, multi-para monitors, oxygen concentrators, and specialized critical care nurses.
-            </p>
-            <ul class="service-bullets">
-              <li><i class="fa-solid fa-angle-right"></i> High-Tech Equipment Rental</li>
-              <li><i class="fa-solid fa-angle-right"></i> 24/7 Critical Care Monitoring</li>
-            </ul>
-            <a href="#contact" class="service-link">Inquire ICU Care <i class="fa-solid fa-arrow-right"></i></a>
-          </article>
+.btn-secondary:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(11, 60, 93, 0.3);
+}
 
-          <!-- Service 5 -->
-          <article class="service-card reveal">
-            <div class="service-icon-box">
-              <i class="fa-solid fa-person-cane"></i>
-            </div>
-            <h3 class="service-title">Elderly & Palliative Care</h3>
-            <p class="service-text">
-              Dedicated senior citizen support providing friendly companionship, dementia care, physical assistance, and respectful palliative comfort.
-            </p>
-            <ul class="service-bullets">
-              <li><i class="fa-solid fa-angle-right"></i> Dementia & Alzheimer's Care</li>
-              <li><i class="fa-solid fa-angle-right"></i> Full Day / Live-in Options</li>
-            </ul>
-            <a href="#contact" class="service-link">Senior Care Inquiry <i class="fa-solid fa-arrow-right"></i></a>
-          </article>
+.btn-outline {
+  border-color: var(--primary);
+  color: var(--primary);
+  background: transparent;
+}
 
-          <!-- Service 6 -->
-          <article class="service-card reveal">
-            <div class="service-icon-box">
-              <i class="fa-solid fa-person-walking-rebound"></i>
-            </div>
-            <h3 class="service-title">Physiotherapy at Home</h3>
-            <p class="service-text">
-              Certified physiotherapists delivering personalized rehabilitation sessions for stroke recovery, joint pain, paralysis, and post-fracture mobility.
-            </p>
-            <ul class="service-bullets">
-              <li><i class="fa-solid fa-angle-right"></i> Customized Exercise Plans</li>
-              <li><i class="fa-solid fa-angle-right"></i> Pain Management & Rehab</li>
-            </ul>
-            <a href="#contact" class="service-link">Book Session <i class="fa-solid fa-arrow-right"></i></a>
-          </article>
-        </div>
-      </div>
-    </section>
+.btn-outline:hover {
+  background-color: var(--primary);
+  color: var(--bg-white);
+}
 
-    <!-- Why Choose Us Section -->
-    <section class="section why-us-section" id="why-us">
-      <div class="container">
-        <div class="section-header text-center reveal">
-          <div class="section-tag">Why Choose Us</div>
-          <h2 class="section-title">The Sky Healthcare Difference</h2>
-          <p class="section-description center">
-            We prioritize clinical excellence, safety, and patient satisfaction above all else.
-          </p>
-        </div>
+.btn-lg {
+  padding: 1rem 2rem;
+  font-size: 1.05rem;
+}
 
-        <div class="why-us-grid">
-          <div class="why-card reveal">
-            <div class="why-icon"><i class="fa-solid fa-user-shield"></i></div>
-            <h3>Certified & Verified Staff</h3>
-            <p>Every nurse and attendant undergoes background checks, police verification, and rigorous practical training before deployment.</p>
-          </div>
+.btn-block {
+  width: 100%;
+}
 
-          <div class="why-card reveal">
-            <div class="why-icon"><i class="fa-solid fa-clock-rotate-left"></i></div>
-            <h3>Rapid Deployment in Pune</h3>
-            <p>Our wide network across Pune ensures quick turnaround times to get care staff to your home when emergencies strike.</p>
-          </div>
+.btn-whatsapp-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  background-color: #25d366;
+  color: #fff;
+  padding: 0.9rem;
+  font-weight: 700;
+  border-radius: var(--radius-md);
+  margin-top: 1.2rem;
+}
 
-          <div class="why-card reveal">
-            <div class="why-icon"><i class="fa-solid fa-hand-holding-dollar"></i></div>
-            <h3>Transparent & Fair Pricing</h3>
-            <p>No hidden charges, flexible daily or monthly packages, and clear billing with no surprises.</p>
-          </div>
+.btn-whatsapp-card:hover {
+  background-color: #1ebc57;
+  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.35);
+}
 
-          <div class="why-card reveal">
-            <div class="why-icon"><i class="fa-solid fa-headset"></i></div>
-            <h3>24/7 Clinical Support</h3>
-            <p>Our medical operations team monitors caregiver shifts and provides constant assistance round the clock.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+/* --------------------------------------------------------------------------
+   5. Header & Navigation
+   -------------------------------------------------------------------------- */
+.navbar-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-color);
+  transition: var(--transition);
+}
 
-    <!-- Testimonials Section -->
-    <section class="section testimonials-section bg-light" id="testimonials">
-      <div class="container">
-        <div class="section-header text-center reveal">
-          <div class="section-tag">Patient Testimonials</div>
-          <h2 class="section-title">Trusted by Hundreds of Families in Pune</h2>
-          <p class="section-description center">
-            Read real stories from families who experienced comfort and recovery with Sky Healthcare.
-          </p>
-        </div>
+.navbar-header.scrolled {
+  box-shadow: var(--shadow-md);
+  padding: 0.2rem 0;
+}
 
-        <div class="testimonials-grid">
-          <div class="testimonial-card reveal">
-            <div class="stars">
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-            </div>
-            <p class="testimonial-text">
-              "When my father was discharged after knee surgery, we needed urgent nursing assistance in Kothrud. Sky Healthcare arranged a professional nurse within 3 hours. Outstanding dedication!"
-            </p>
-            <div class="reviewer-info">
-              <div class="reviewer-avatar">RP</div>
-              <div>
-                <strong>Rajesh Patil</strong>
-                <span>Kothrud, Pune</span>
-              </div>
-            </div>
-          </div>
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+}
 
-          <div class="testimonial-card reveal">
-            <div class="stars">
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-            </div>
-            <p class="testimonial-text">
-              "We hired a 24-hour patient care attendant for my grandmother in Baner. The attendant was extremely polite, hygienic, and treated her like family. Highly recommended."
-            </p>
-            <div class="reviewer-info">
-              <div class="reviewer-avatar">SK</div>
-              <div>
-                <strong>Sneha Kulkarni</strong>
-                <span>Baner, Pune</span>
-  
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo-icon-wrapper {
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  font-size: 1.3rem;
+}
+
+.logo-text {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--primary);
+  letter-spacing: -0.5px;
+}
+
+.logo-highlight {
+  color: var(--secondary);
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+}
+
+.nav-link {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  position: relative;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--secondary);
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--secondary);
+  border-radius: var(--radius-full);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  color: var(--primary);
+  cursor: pointer;
+}
+
+.mobile-toggle .icon-close {
+  display: none;
+}
+
+/* Mobile Responsive Nav */
+@media (max-width: 991px) {
+  .mobile-toggle {
+    display: block;
+  }
+
+  .btn-phone-header {
+    display: none;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-white);
+    border-bottom: 2px solid var(--border-color);
+    padding: 2rem 1.5rem;
+    transform: translateY(-150%);
+    transition: var(--transition);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .nav-menu.open {
+    transform: translateY(0);
+  }
+
+  .nav-list {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+
+  .nav-link {
+    font-size: 1.1rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   6. Hero Section & Stats
+   -------------------------------------------------------------------------- */
+.hero-section {
+  padding-top: 9rem;
+  padding-bottom: 3rem;
+  background: linear-gradient(135deg, #f0f7fa 0%, #ffffff 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+@media (min-width: 992px) {
+  .hero-container {
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+  }
+}
+
+.badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1rem;
+  background-color: rgba(11, 60, 93, 0.08);
+  color: var(--primary);
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  font-size: 0.85rem;
+  margin-bottom: 1.25rem;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1.15;
+  margin-bottom: 1.25rem;
+  letter-spacing: -1px;
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.1rem;
+  }
+}
+
+.hero-subtitle {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.hero-cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.hero-trust-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--primary);
+}
+
+.trust-item i {
+  color: var(--secondary);
+}
+
+.hero-card {
+  background: var(--bg-white);
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-color);
+}
+
+.hero-card-header {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.hero-card-icon {
+  font-size: 2.2rem;
+  color: var(--secondary);
+  background: rgba(0, 168, 150, 0.1);
+  padding: 0.8rem;
+  border-radius: var(--radius-md);
+}
+
+.hero-card-header h3 {
+  font-size: 1.2rem;
+  color: var(--primary);
+}
+
+.hero-card-header p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.hero-card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.hero-card-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.hero-card-list li i {
+  color: var(--secondary);
+}
+
+/* Stats Bar */
+.stats-bar {
+  margin-top: 4rem;
+  background-color: var(--primary);
+  color: #fff;
+  padding: 2.5rem 0;
+}
+
+.stats-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .stats-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.stat-number {
+  font-size: 2.8rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.stat-plus {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--secondary);
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* --------------------------------------------------------------------------
+   7. About Us Section
+   -------------------------------------------------------------------------- */
+.about-experience-card {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #fff;
+  padding: 2.5rem;
+  border-radius: var(--radius-lg);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.exp-years {
+  display: block;
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.exp-text {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  display: block;
+}
+
+.about-highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.about-mini-box {
+  background: var(--bg-light);
+  padding: 1.25rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+}
+
+.about-mini-box i {
+  font-size: 1.8rem;
+  color: var(--secondary);
+  margin-bottom: 0.5rem;
+}
+
+.about-mini-box h4 {
+  font-size: 1rem;
+  color: var(--primary);
+  margin-bottom: 0.25rem;
+}
+
+.about-mini-box p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.about-feature-list {
+  margin: 1.5rem 0 2rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.feature-item {
+  display: flex;
+  gap: 0.8rem;
+  align-items: flex-start;
+}
+
+.feature-item i {
+  color: var(--secondary);
+  font-size: 1.2rem;
+  margin-top: 0.2rem;
+}
+
+.feature-item p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   8. Services Section
+   -------------------------------------------------------------------------- */
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.service-card {
+  background: var(--bg-white);
+  padding: 2.2rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(0, 168, 150, 0.4);
+}
+
+.service-icon-box {
+  width: 60px;
+  height: 60px;
+  background: rgba(0, 168, 150, 0.1);
+  color: var(--secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  border-radius: var(--radius-md);
+  margin-bottom: 1.25rem;
+}
+
+.service-title {
+  font-size: 1.3rem;
+  color: var(--primary);
+  margin-bottom: 0.75rem;
+}
+
+.service-text {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+.service-bullets {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.service-bullets li {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--primary);
+
+}
+
+.service-bullets li i {
+  color: var(--secondary);
+  margin-right: 0.3rem;
+}
+
+.service-link {
+  font-weight: 700;
+  color: var(--secondary);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.service-link:hover {
+  color: var(--secondary-hover);
+  gap: 0.7rem;
+}
+
+/* --------------------------------------------------------------------------
+   9. Why Choose Us Section
+   -------------------------------------------------------------------------- */
+.why-us-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .why-us-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .why-us-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.why-card {
+  padding: 2rem;
+  background: var(--bg-white);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+  transition: var(--transition);
+}
+
+.why-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.why-icon {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 1.25rem auto;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+}
+
+.why-card h3 {
+  font-size: 1.15rem;
+  color: var(--primary);
+  margin-bottom: 0.6rem;
+}
+
+.why-card p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   10. Testimonials Section
+   -------------------------------------------------------------------------- */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .testimonials-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.testimonial-card {
+  background: var(--bg-white);
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.stars {
+  color: #ffb800;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.testimonial-text {
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  margin-bottom: 1.5rem;
+}
+
+.reviewer-info {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.reviewer-avatar {
+  width: 44px;
+  height: 44px;
+  background-color: var(--primary);
+  color: #fff;
+  font-weight: 700;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+}
+
+.reviewer-info strong {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--primary);
+}
+
+.reviewer-info span {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   11. FAQ Accordion
+   -------------------------------------------------------------------------- */
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.faq-item {
+  background: var(--bg-white);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+}
+
+.faq-question {
+  width: 100%;
+  padding: 1.25rem 1.5rem;
+  background: none;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--primary);
+  cursor: pointer;
+  text-align: left;
+}
+
+.faq-icon {
+  transition: var(--transition);
+  color: var(--secondary);
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease-out;
+  background-color: var(--bg-light);
+}
+
+.faq-answer p {
+  padding: 1.25rem 1.5rem;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   12. Contact Form & Info Card
+   -------------------------------------------------------------------------- */
+.contact-wrapper {
+  align-items: stretch;
+}
+
+.contact-info-card {
+  background: var(--primary);
+  color: #fff;
+  padding: 2.5rem;
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.contact-info-card h3 {
+  font-size: 1.6rem;
+  margin-bottom: 0.8rem;
+}
+
+.contact-info-card > p {
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+}
+
+.contact-details-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.contact-detail-item {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.icon-circle {
+  width: 44px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: var(--secondary);
+}
+
+.contact-detail-item strong {
+  display: block;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.contact-detail-item p, .contact-detail-item a {
+  font-size: 1rem;
+  color: #fff;
+  font-weight: 600;
+}
+
+.contact-form-card {
+  background: var(--bg-white);
+  padding: 2.5rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 576px) {
+  .form-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+label {
+  display: block;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--primary);
+  margin-bottom: 0.4rem;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  transition: var(--transition);
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--secondary);
+  background-color: #fff;
+  box-shadow: 0 0 0 3px rgba(0, 168, 150, 0.15);
+}
+
+.error-msg {
+  display: none;
+  color: var(--accent);
+  font-size: 0.75rem;
+  margin-top: 0.3rem;
+  font-weight: 600;
+}
+
+.form-group.invalid input, .form-group.invalid select {
+  border-color: var(--accent);
+}
+
+.form-group.invalid .error-msg {
+  display: block;
+}
+
+.form-feedback {
+  margin-top: 1rem;
+  padding: 0.8rem;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  text-align: center;
+  display: none;
+}
+
+.form-feedback.success {
+  display: block;
+  background-color: rgba(37, 211, 102, 0.15);
+  color: #128c7e;
+  border: 1px solid #25d366;
+}
+
+/* ---------------------
