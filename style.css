@@ -1,1 +1,331 @@
+/* ===========================
+   SKY HEALTHCARE STYLE.CSS
+=========================== */
 
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#f7fbff;
+color:#222;
+line-height:1.7;
+overflow-x:hidden;
+}
+
+.container{
+width:90%;
+max-width:1200px;
+margin:auto;
+}
+
+a{
+text-decoration:none;
+color:inherit;
+}
+
+img{
+max-width:100%;
+display:block;
+}
+
+section{
+padding:80px 0;
+}
+
+/* HEADER */
+
+.header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+background:#ffffff;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+z-index:999;
+}
+
+.header .container{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 0;
+}
+
+.logo{
+font-size:28px;
+font-weight:700;
+color:#0d6efd;
+}
+
+.logo span{
+color:#00b4ff;
+}
+
+.navbar{
+display:flex;
+gap:25px;
+}
+
+.navbar a{
+font-weight:500;
+transition:.3s;
+}
+
+.navbar a:hover{
+color:#0d6efd;
+}
+
+.btn{
+background:#0d6efd;
+color:#fff;
+padding:12px 28px;
+border-radius:50px;
+transition:.3s;
+font-weight:600;
+}
+
+.btn:hover{
+background:#004ecb;
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+background:linear-gradient(rgba(13,110,253,.75),rgba(0,180,255,.75)),
+url('images/hero.jpg') center/cover;
+color:#fff;
+}
+
+.hero h1{
+font-size:55px;
+margin-bottom:20px;
+  /* ===========================
+   ABOUT
+=========================== */
+
+.about{
+background:#ffffff;
+text-align:center;
+}
+
+.about h2,
+.services h2,
+.equipment h2,
+.gallery h2,
+.contact h2,
+.why-us h2{
+font-size:40px;
+color:#0d6efd;
+margin-bottom:20px;
+}
+
+.about p{
+max-width:900px;
+margin:auto;
+font-size:18px;
+color:#555;
+}
+
+/* ===========================
+   SERVICES
+=========================== */
+
+.services{
+background:#f7fbff;
+}
+
+.service-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+margin-top:40px;
+}
+
+.card{
+background:#fff;
+padding:35px;
+border-radius:18px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+transition:.3s;
+text-align:center;
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 20px 40px rgba(0,0,0,.15);
+}
+
+.card h3{
+color:#0d6efd;
+margin-bottom:15px;
+font-size:24px;
+}
+
+.card p{
+color:#666;
+}
+
+/* ===========================
+   EQUIPMENT
+=========================== */
+
+.equipment{
+background:#fff;
+}
+
+/* ===========================
+   WHY US
+=========================== */
+
+.why-us{
+background:#eef7ff;
+text-align:center;
+}
+
+.why-us ul{
+list-style:none;
+margin-top:30px;
+}
+
+.why-us li{
+padding:12px;
+font-size:18px;
+                            }
+ /* ===========================
+   GALLERY
+=========================== */
+
+.gallery{
+background:#f8fbff;
+}
+
+.gallery-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+margin-top:40px;
+}
+
+.gallery-grid img{
+width:100%;
+height:250px;
+object-fit:cover;
+border-radius:15px;
+transition:.4s;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.gallery-grid img:hover{
+transform:scale(1.05);
+}
+
+/* ===========================
+   CONTACT
+=========================== */
+
+.contact{
+background:#ffffff;
+}
+
+.contact form{
+max-width:700px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+.contact input,
+.contact textarea{
+padding:15px;
+border:1px solid #ddd;
+border-radius:10px;
+font-size:16px;
+font-family:'Poppins',sans-serif;
+}
+
+.contact textarea{
+height:140px;
+resize:vertical;
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+.footer{
+background:#0d2b5b;
+color:#fff;
+text-align:center;
+padding:50px 20px;
+}
+
+.footer p{
+margin:10px 0;
+}
+
+/* ===========================
+   FLOATING WHATSAPP
+=========================== */
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+width:60px;
+height:60px;
+background:#25D366;
+color:#fff;
+display:flex;
+justify-content:center;
+align-items:center;
+border-radius:50%;
+font-size:30px;
+box-shadow:0 10px 25px rgba(0,0,0,.2);
+z-index:999;
+transition:.3s;
+}
+
+.whatsapp:hover{
+transform:scale(1.1);
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:36px;
+}
+
+.hero p{
+font-size:17px;
+}
+
+.header .container{
+flex-direction:column;
+gap:15px;
+}
+
+.navbar{
+flex-wrap:wrap;
+justify-content:center;
+gap:15px;
+}
+
+  } 
