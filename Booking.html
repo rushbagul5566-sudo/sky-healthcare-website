@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Book Service | Sky Healthcare</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+.booking-page{
+    min-height:100vh;
+    background:#f5fbff;
+    padding:50px 20px;
+}
+
+.booking-box{
+    max-width:700px;
+    margin:auto;
+    background:#fff;
+    padding:35px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.1);
+}
+
+.booking-box h2{
+    text-align:center;
+    color:#0b7dda;
+    margin-bottom:25px;
+}
+
+.booking-box input,
+.booking-box select,
+.booking-box textarea{
+    width:100%;
+    padding:14px;
+    margin:10px 0;
+    border:1px solid #ddd;
+    border-radius:10px;
+    font-size:16px;
+}
+
+.booking-box textarea{
+    resize:vertical;
+}
+
+.booking-box button{
+    width:100%;
+    padding:15px;
+    background:#0b7dda;
+    color:#fff;
+    border:none;
+    border-radius:10px;
+    font-size:17px;
+    cursor:pointer;
+}
+
+.booking-box button:hover{
+    background:#075ea8;
+}
+</style>
+
+</head>
+
+<body>
+
+<section class="booking-page">
+
+<div class="booking-box">
+
+<h2>Book Healthcare Service</h2>
+
+<form>
+
+<input type="text" placeholder="Patient Name" required>
+
+<input type="tel" placeholder="Mobile Number" required>
+
+<input type="text" placeholder="Address" required>
+
+<select required>
+<option value="">Select Service</option>
+<option>Home Nursing</option>
+<option>Caregiver</option>
+<option>ICU Care</option>
+<option>Medical Equipment Rental</option>
+<option>Physiotherapy</option>
+<option>Doctor Home Visit</option>
+</select>
+
+<input type="date" required>
+
+<input type="time" required>
+
+<textarea rows="5" placeholder="Patient Condition / Additional Information"></textarea>
+
+<button type="submit">Submit Booking</button>
+
+</form>
+
+</div>
+
+</section>
+
+</body>
+</html>
