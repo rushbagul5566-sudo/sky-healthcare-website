@@ -1,367 +1,76 @@
 /* ===========================
-   SKY HEALTHCARE - PART 1
+   Sky Healthcare Premium CSS
 =========================== */
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 body{
-font-family:'Poppins',sans-serif;
-background:#f5f9ff;
-color:#333;
-line-height:1.7;
+    font-family:'Poppins',sans-serif;
+    background:#f8fbff;
+    color:#222;
 }
+
+a{
+    text-decoration:none;
+}
+
+ul{
+    list-style:none;
+}
+
+/* ===== Header ===== */
 
 .header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:18px 8%;
-background:#ffffff;
-box-shadow:0 2px 15px rgba(0,0,0,0.08);
-position:sticky;
-top:0;
-z-index:1000;
-}
-
-.logo{
-display:flex;
-align-items:center;
-gap:15px;
-}
-
-.logo img{
-width:65px;
-height:65px;
-object-fit:contain;
+    width:100%;
+    background:#ffffff;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 8%;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 2px 15px rgba(0,0,0,.08);
 }
 
 .logo h2{
-color:#0b63ce;
-font-size:28px;
+    color:#0b5ed7;
+    font-size:30px;
+    font-weight:700;
 }
 
-.logo p{
-font-size:14px;
-color:#666;
+.logo span{
+    color:#00a8ff;
 }
 
-nav{
-display:flex;
-gap:25px;
+.navbar ul{
+    display:flex;
+    gap:30px;
 }
 
-nav a{
-text-decoration:none;
-color:#222;
-font-weight:600;
-transition:.3s;
+.navbar a{
+    color:#222;
+    font-weight:500;
+    transition:.3s;
 }
 
-nav a:hover{
-color:#0b63ce;
-}
-
-.hero{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:80px 8%;
-background:linear-gradient(135deg,#0b63ce,#35b6ff);
-color:white;
-}
-
-.hero-text{
-max-width:550px;
-}
-
-.hero-text h1{
-font-size:48px;
-margin-bottom:15px;
-}
-
-.hero-text h3{
-font-size:24px;
-margin-bottom:15px;
-font-weight:500;
-}
-
-.hero-text p{
-font-size:18px;
-margin-bottom:25px;
-}
-
-.btn{
-display:inline-block;
-padding:14px 28px;
-background:#fff;
-color:#0b63ce;
-text-decoration:none;
-font-weight:700;
-border-radius:40px;
-transition:.3s;
-}
-
-.btn:hover{
-transform:translateY(-3px);
-}
-
-.hero-image img{
-width:420px;
-max-width:100%;
-    }
-/* ===========================
-   ABOUT
-=========================== */
-
-.about{
-padding:80px 8%;
-text-align:center;
-background:#ffffff;
-}
-
-.about h2{
-font-size:38px;
-color:#0b63ce;
-margin-bottom:25px;
-}
-
-.about p{
-font-size:18px;
-max-width:900px;
-margin:15px auto;
-}
-
-/* ===========================
-   SERVICES
-=========================== */
-
-.services{
-padding:80px 8%;
-background:#f5f9ff;
-}
-
-.services h2{
-text-align:center;
-font-size:38px;
-color:#0b63ce;
-margin-bottom:40px;
-}
-
-.service-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:25px;
-}
-
-.card{
-background:#ffffff;
-padding:30px;
-border-radius:18px;
-box-shadow:0 10px 25px rgba(0,0,0,.08);
-transition:.3s;
-text-align:center;
-}
-
-.card:hover{
-transform:translateY(-8px);
-}
-
-.card h3{
-margin-bottom:15px;
-color:#0b63ce;
-}
-
-/* ===========================
-   EQUIPMENT
-=========================== */
-
-.equipment{
-padding:80px 8%;
-background:#ffffff;
-text-align:center;
-}
-
-.equipment h2{
-font-size:38px;
-color:#0b63ce;
-margin-bottom:30px;
-}
-
-.equipment ul{
-list-style:none;
-max-width:600px;
-margin:auto;
-}
-
-.equipment li{
-background:#f5f9ff;
-margin:12px 0;
-padding:15px;
-border-radius:10px;
-font-size:18px;
-    }
-/* ===========================
-   CONTACT
-=========================== */
-
-.contact{
-padding:80px 8%;
-text-align:center;
-background:#0b63ce;
-color:#fff;
-}
-
-.contact h2{
-font-size:38px;
-margin-bottom:20px;
-}
-
-.contact p{
-font-size:18px;
-margin:10px 0;
-}
-
-.contact-buttons{
-margin-top:30px;
-display:flex;
-justify-content:center;
-gap:20px;
-flex-wrap:wrap;
-}
-
-.call-btn,
-.whatsapp-btn{
-display:inline-block;
-padding:14px 30px;
-border-radius:40px;
-text-decoration:none;
-font-weight:700;
-transition:.3s;
+.navbar a:hover{
+    color:#0b5ed7;
 }
 
 .call-btn{
-background:#ffffff;
-color:#0b63ce;
+    background:#0b5ed7;
+    color:#fff;
+    padding:12px 22px;
+    border-radius:30px;
+    font-weight:600;
+    transition:.3s;
 }
 
-.whatsapp-btn{
-background:#25D366;
-color:#ffffff;
+.call-btn:hover{
+    background:#084298;
 }
-
-.call-btn:hover,
-.whatsapp-btn:hover{
-transform:translateY(-3px);
-}
-
-/* ===========================
-   FOOTER
-=========================== */
-
-footer{
-background:#062b5b;
-color:#ffffff;
-text-align:center;
-padding:30px 20px;
-}
-
-footer h3{
-margin-bottom:10px;
-}
-
-/* ===========================
-   MOBILE RESPONSIVE
-=========================== */
-
-@media (max-width: 768px){
-
-.header{
-flex-direction:column;
-padding:15px;
-}
-
-nav{
-flex-wrap:wrap;
-justify-content:center;
-gap:15px;
-margin-top:15px;
-}
-
-.hero{
-flex-direction:column;
-text-align:center;
-padding:50px 20px;
-}
-
-.hero-text h1{
-font-size:34px;
-}
-
-.hero-text h3{
-font-size:20px;
-}
-
-.hero-image{
-margin-top:30px;
-}
-
-.about,
-.services,
-.equipment,
-.contact{
-padding:50px 20px;
-}
-
-    }
-section h2 {
-    color: #007bff;
-    font-size: 28px;
-    margin-top: 30px;
-}
-
-p {
-    font-size: 17px;
-    line-height: 1.6;
-}
-
-.box:hover {
-    transform: translateY(-5px);
-                             }
-.hero {
-    background: #e8f3ff;
-    padding: 50px 20px;
-    text-align: center;
-}
-
-.hero h2 {
-    color: #007bff;
-    font-size: 36px;
-}
-
-.hero p {
-    font-size: 18px;
-}
-.banner {
-    background: #e8f3ff;
-    padding: 50px 20px;
-    text-align: center;
-}
-
-.banner h2 {
-    color: #007bff;
-    font-size: 32px;
-}
-
-.btn {
-    display: inline-block;
-    background: #007bff;
-    color: white;
-    padding: 12px 25px;
-    border-radius: 8px;
-    text-decoration: none;
-    margin-top: 20px;
-   }
